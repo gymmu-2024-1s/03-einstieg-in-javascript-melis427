@@ -84,7 +84,7 @@ export function aufgabe04(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    if (currentElement === "einfachtxur") {
+    if (currentElement === "EinfachnurText") {
       count = count + 1
     } else if (currentElement === "E") {
       count++
