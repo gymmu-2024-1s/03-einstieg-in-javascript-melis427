@@ -129,4 +129,29 @@ export function aufgabe09(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 
-export function aufgabe11(args) {}
+export function aufgabe11(args) {
+  const input = args
+  const result = []
+
+  // Speichere den ascii wert vom ersten zeichen in input
+  const ascii = input[0].charCodeAt(0)
+
+  return ascii
+}
+
+linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      return i
+    }
+  }
+  return -1 // or null
+}
+
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
