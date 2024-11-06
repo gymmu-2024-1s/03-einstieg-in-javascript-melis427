@@ -147,6 +147,7 @@ export function aufgabe12(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+
     if (currentElement === "e") {
       return i
     }
@@ -155,3 +156,18 @@ export function aufgabe12(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe13(args) {
+  const input = args
+  let lastIndex = -1
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      lastIndex = i
+    }
+  }
+  return lastIndex
+}
+
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
