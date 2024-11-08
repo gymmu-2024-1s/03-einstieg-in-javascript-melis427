@@ -255,3 +255,21 @@ export function aufgabe21(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+  //Es sollen alle Zeichen aus der Eingabe mit `_` ersetzt werden, bis zum ersten `k`.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "k") {
+      break
+    }
+    result.push(currentElement)
+    result.push("_")
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
