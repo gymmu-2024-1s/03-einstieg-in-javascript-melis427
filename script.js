@@ -207,6 +207,37 @@ linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
 export function aufgabe19(args) {
   const input = args
   const result = []
+  //Jedes Zeichen in der Eingabe soll verdoppelt werden
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+    result.push(currentElement) // Verdopple das Zeichen
+  }
 
   return result.join("")
 }
+
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+
+  let allGood = true
+
+  //Prüfe ob nach jeden "."ein Leerschlag kommt
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      //Prüfe ob das nächste Zeichen ein Leerzeichen ist
+      if (input[i + 1] === " ") {
+        //do nothing
+      } else {
+        allGood = false
+      }
+    }
+  }
+  return allGood
+}
+
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
