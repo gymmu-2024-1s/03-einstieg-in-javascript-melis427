@@ -108,8 +108,24 @@ export function aufgabe08(args) {
   }
   return result.join("")
 }
-
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+  lethasCapitalletter = false
+  //Schreib eine Funktion, die testet, ob ein Grossbuchstaben vorkommt
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii >= 65 && ascii <= 90) {
+      hasCapitalletter = true
+    }
+  }
+  return hasCapitalletter
+}
+
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
 export function aufgabe09(args) {
   const input = args
