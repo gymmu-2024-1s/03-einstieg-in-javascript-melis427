@@ -253,6 +253,25 @@ export function aufgabe17(args) {
 
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
+function aufgabe18(args) {
+  const input = args
+  const result = []
+  //Schreibe folgende Ausgabe: Sie heissen `name` und sind `alter` Jahre alt,  wobei `name` und `alter` durch Eingaben eingesetzt werden.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "name") {
+      result.push("Sie heissen")
+    } else if (currentElement === "alter") {
+      result.push("und sind")
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join(" ")
+}
+
+linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+
 export function aufgabe19(args) {
   const input = args
   const result = []
@@ -317,3 +336,10 @@ export function aufgabe22(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
