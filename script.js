@@ -111,6 +111,24 @@ export function aufgabe05(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+  //Sollte das Wort 'und' erkennen
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "u") {
+      if (input[i + 1] === "n") {
+        if (input[i + 2] === "d") {
+          return true
+        }
+      }
+    }
+  }
+  return false
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
 export function aufgabe08(args) {
   const result = []
   const input = args
