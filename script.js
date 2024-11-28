@@ -79,22 +79,20 @@ linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 export function aufgabe04(args) {
   const input = args
   const result = []
-
+  // Zähle alle Wörter des Textes und speichere die Anzahl in einer Variable
   let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
-    if (currentElement === "") {
+    if (currentElement === " ") {
       count = count + 1
-    } else if (currentElement === "E") {
-      count++
     }
   }
-  return count
+  if (count === 0) {
+  }
+
+  return count + 1
 }
-
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
-
 export function aufgabe05(args) {
   const input = args
   const result = []
@@ -114,15 +112,17 @@ linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 export function aufgabe06(args) {
   const input = args
   const result = []
-  //Schreibe eine Funktion, die testet, ob ein Sonderzeichen vorkommt
+  let hasSonderzeichen = false
+  // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === " ") {
-      result.push(currentElement)
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii >= 33 && ascii <= 47) {
+      hasSonderzeichen = true
     }
   }
-
-  return result.join("")
+  return hasSonderzeichen
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
