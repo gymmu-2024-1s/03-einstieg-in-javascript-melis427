@@ -111,6 +111,21 @@ export function aufgabe05(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  //Schreibe eine Funktion, die testet, ob ein Sonderzeichen vorkommt
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
+
 export function aufgabe07(args) {
   const input = args
   const result = []
