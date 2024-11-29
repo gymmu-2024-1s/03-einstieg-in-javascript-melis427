@@ -295,7 +295,7 @@ linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 export function aufgabe17(args) {
   const input = args
   const result = []
-  //Schribe hinter jedem Wort ein ","
+  // Schreibe hinter jedem Wort ein ","
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "") {
@@ -304,6 +304,7 @@ export function aufgabe17(args) {
       result.push(currentElement)
     }
   }
+
   return result.join("")
 }
 
