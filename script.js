@@ -472,3 +472,18 @@ export function aufgabe26(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
+
+export function aufgabe27(args) {
+  const input = args
+  const result = []
+  //Teste, ob eine Eingabe eine Zahl ist
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (isNaN(currentElement)) {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
