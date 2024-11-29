@@ -237,13 +237,13 @@ linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe14(args) {
   const input = args
-  const result = []
-  //Suche das dritte e in einem Text
+  let count = 0
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-
-    if (currentElement === "e") {
-      result.push(currentElement)
+    if (input[i] === "e") {
+      count++
+      if (count === 3) {
+        return i
+      }
     }
   }
   return -1
