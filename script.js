@@ -177,6 +177,21 @@ export function aufgabe09(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    //Teste, ob die Eingabe ein korrekter RGB Hexcode ist.
+    if (input[i] === "#") {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
+
 export function aufgabe11(args) {
   const input = args
   const result = []
