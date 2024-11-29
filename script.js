@@ -437,3 +437,19 @@ export function aufgabe24(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+  //Lösche die mittleren Zeichen in der Eingabe
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === Math.floor(input.length / 2)) {
+      //rundet eine Zahl auf die nächste ganze Zahl
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
