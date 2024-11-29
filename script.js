@@ -194,16 +194,25 @@ linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe11(args) {
   const input = args
-  const result = []
 
-  // Speichere den ascii wert vom ersten zeichen in input
-  const ascii = input[0].charCodeAt(0)
+  //Erstelle eine Variable um den ASCII-Code zu speichern.
+  let asciiCode = 0
 
-  return ascii
+  //Speichere den ASCII-Code vom ersten Zeichen
+  asciiCode = input.charCodeAt(0) // Speichert den ASCII- oder Unicode-Wert des ersten Zeichens im String 'input' in der Variable 'asciiCode'.
+
+  //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind.
+  if (input.length > 1) {
+    return null
+
+    //Gibt den ASCII-Wert des ersten Zeichens zurück oder 'null', wenn die Eingabe leer ist.
+  } else if (input.length === 0) {
+    return null // Gibt null zurück, wenn 'input' mehr als ein Zeichen enthält, andernfalls den ASCII-Wert des ersten Zeichens.
+  }
+  return asciiCode
 }
 
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
-
 export function aufgabe12(args) {
   const input = args
   const result = []
