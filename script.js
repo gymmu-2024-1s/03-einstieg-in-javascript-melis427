@@ -93,19 +93,10 @@ export function aufgabe04(args) {
   return count + 1
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
+
 export function aufgabe05(args) {
-  const input = args
-  const result = []
-  let lethasCapitalletter = false
-  //Schreib eine Funktion, die testet, ob ein Grossbuchstaben vorkommt
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-  }
-  let ascii = currentElement.charCodeAt(0)
-  if (ascii >= 65 && ascii <= 90) {
-    hasCapitalletter = true
-  }
-  return lethasCapitalletter
+  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
+  //Von KI gelöst
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
@@ -199,8 +190,7 @@ export function aufgabe11(args) {
   let asciiCode = 0
 
   //Speichere den ASCII-Code vom ersten Zeichen
-  asciiCode = input.charCodeAt(0) // Speichert den ASCII- oder Unicode-Wert des ersten Zeichens im String 'input' in der Variable 'asciiCode'.
-
+  asciiCode = input.charCodeAt(0) //// Speichert den ASCII/Unicode-Wert des ersten Zeichens von 'input' in 'asciiCode'
   //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind.
   if (input.length > 1) {
     return null
