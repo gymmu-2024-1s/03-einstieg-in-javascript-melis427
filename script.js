@@ -503,3 +503,29 @@ export function aufgabe28(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
+
+export function aufgabe29(args) {
+  //Ersetze alle Leerzeichen durch ein "%" und alle Vokale durch ein "#"
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      result.push("%")
+    } else if (currentElement === "a") {
+      result.push("#")
+    } else if (currentElement === "e") {
+      result.push("#")
+    } else if (currentElement === "i") {
+      result.push("#")
+    } else if (currentElement === "o") {
+      result.push("#")
+    } else if (currentElement === "u") {
+      result.push("#")
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
