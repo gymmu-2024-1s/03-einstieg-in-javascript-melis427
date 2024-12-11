@@ -190,7 +190,7 @@ export function aufgabe11(args) {
   let asciiCode = 0
 
   //Speichere den ASCII-Code vom ersten Zeichen
-  asciiCode = input.charCodeAt(0) //// Speichert den ASCII/Unicode-Wert des ersten Zeichens von 'input' in 'asciiCode'
+  asciiCode = input.charCodeAt(0) // Speichert den ASCII/Unicode-Wert des ersten Zeichens von 'input' in 'asciiCode'
   //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind.
   if (input.length > 1) {
     return null
@@ -519,3 +519,24 @@ export function aufgabe29(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe29]", aufgabe29)
+
+export function Bubblesort(args) {
+  const text = args
+  const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+  for (let i = 0; i < list.length - 1; i++) {
+    const currentElement = list[i]
+    const nextElement = list[i + 1]
+    if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+      const tmp = list[i + 1]
+      list[i + 1] = list[i]
+      list[i] = tmp
+      i = -1 // starte von vorne wenn etwas vertauscht wurde.
+    }
+  }
+  const result = list.join("")
+
+  return result
+}
+
+linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
