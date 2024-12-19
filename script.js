@@ -570,3 +570,19 @@ export function Selectionsort(args) {
   return input
 }
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
+
+export function aufgabe30(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "s") {
+      return i //Gibt die Position des ersten "s" zurueck
+    }
+  }
+  return -1 //Falls kein "t" gefunden wurde, dann gibt es -1 zurück
+}
+
+linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
