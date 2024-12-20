@@ -50,8 +50,8 @@ export function aufgabe02(args) {
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const uppercaseletter = currentElement.toUpperCase()
-    result.push(uppercaseletter)
+    const uppercaseletter = currentElement.toUpperCase() //Dadurch werden alle Buchstaben zu Grossbuchstaben
+    result.push(uppercaseletter) //Fügt den Text in Grossbuchstaben zum Array hinzu
   }
   return result.join("")
 }
@@ -61,17 +61,17 @@ export function aufgabe03(args) {
   const input = args
   const result = []
 
-  let count = 0
+  let count = 0 //Setzt "count" auf 0, um später "e" oder "E" zu zählen
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
-      count = count + 1
+      count = count + 1 //Erhöht den Wert von "count" um 1, wenn ein e gefunden wird
     } else if (currentElement === "E") {
-      count++
+      count++ //Erhöht den Zähler um 1, wenn ein grosses E gefunden wird
     }
   }
-  return count
+  return count //Gibt den Wert von "count" zurück
 }
 
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
@@ -120,7 +120,8 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
-  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
+  return /[A-Z]/.test(args) //Prüft, ob es mindestens einen Grossbuchstaben hat (in args). Es soll true oder false zurückgeben.
+  //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
   //Von KI gelöst
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
@@ -128,17 +129,18 @@ linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 export function aufgabe06(args) {
   const input = args
   const result = []
-  let hasSonderzeichen = false
+  let hasSonderzeichen = false //Setzt "hasSonderzeichen" auf false, um später nach Sonderzeichen in der Eingabe zu suchen
   // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
     if (ascii >= 33 && ascii <= 47) {
-      hasSonderzeichen = true
+      //Überprüft, ob der ASCII-Code zwischen 33 und 47 liegt
+      hasSonderzeichen = true //Wenn es ein Sonderzeichen hat, dann setzt man "hasSonderzeichen" auf true
     }
   }
-  return hasSonderzeichen
+  return hasSonderzeichen //Gibt an, ob es in der Eingabe Sonderzeichen gibt
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
@@ -149,14 +151,17 @@ export function aufgabe07(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "u") {
+      //Überprüft, ob "u" dem currentElement entspricht
       if (input[i + 1] === "n") {
+        //Prüft, ob das nächste Zeichen  nach dem currentElement ein "n" ist
         if (input[i + 2] === "d") {
-          return true
+          //Prüft, ob das nächste Zeichen ein d ist, um das "und" zu vervollständigen
+          return true //Gibt true zurück, wenn "und" gefunden wurde
         }
       }
     }
   }
-  return false
+  return false //gibt false zurück, wenn "und" nicht gefunden wurde
 }
 linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
 
@@ -166,7 +171,7 @@ export function aufgabe08(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      result.push("3") // Ersetze "e" durch "3"
+      result.push("3") // Ersetz jedes "e" durch "3" in der Eingabe
     } else {
       result.push(currentElement) // Behalte alle anderen Zeichen bei
     }
@@ -181,15 +186,16 @@ export function aufgabe09(args) {
   let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    count = count + 1
+    count = count + 1 //Erhöht jeden Wert von "count" um 1
   }
-  let has6 = false
+  let has6 = false //Setzt die has6 auf false, um u überprüfen, ob die Länge der Eingabe 6 ist
 
   if (count === 6) {
-    has6 = true
+    //Prüft, ob die Länge der Eingabe 6 ist
+    has6 = true //Setzt "has6" auf true, wenn die Länge der Eingabe 6 ist
   }
 
-  return has6
+  return has6 //Gibt true zurück, wenn es 6 Eingaben sind, false, wenn es keine 6 sind
 }
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
 
@@ -200,9 +206,10 @@ export function aufgabe10(args) {
   for (let i = 0; i < input.length; i++) {
     //Teste, ob die Eingabe ein korrekter RGB Hexcode ist.
     if (input[i] === "#") {
-      return true
+      //Prüft, ob ein # in der Eingabe vorkommt
+      return true //Gibt true zurück, wenn ein # in der Eingabe vorkommt
     } else {
-      return false
+      return false //Gibt false zurück, wenn ein # in der Eingabe nicht vorkommt
     }
   }
 }
