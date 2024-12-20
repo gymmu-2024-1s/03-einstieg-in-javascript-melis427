@@ -522,6 +522,7 @@ export function aufgabe27(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (isNaN(currentElement)) {
+      //Prüft, ob der Wert von currentElement keine gültige Zahl ist. Wenn es keine gültige Zahl ist, dann gibt es true zurück. Wenn es aber eine gültige Zahl ist, dann gibt es false zurück
       result.push(currentElement)
     }
   }
