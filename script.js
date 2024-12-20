@@ -578,13 +578,14 @@ export function Bubblesort(args) {
   const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
   for (let i = 0; i < list.length - 1; i++) {
     const currentElement = list[i]
-    const nextElement = list[i + 1]
+    const nextElement = list[i + 1] //weist der Variablen nextElement den Wert aus der Liste an der Position i+1 zu
     if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
       // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
       const tmp = list[i + 1] // Speichert den Wert aus der Liste an der Position i+1 in der Variablen tmp
       list[i + 1] = list[i]
-      list[i] = tmp
-      i = -1 // starte von vorne wenn etwas vertauscht wurde.
+      list[i] = tmp //Das Element an der Stelle i in list wird durch den Wert ersetzt, der in der Variable tmp gespeichert wurde
+      i = -1 //Setzt den Wert von i auf -1, um die Schleife neu zu starten
+      //starte von vorne, wenn etwas vertauscht wurde.
     }
   }
   const result = list.join("")
