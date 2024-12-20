@@ -315,12 +315,12 @@ export function aufgabe18(args) {
   const result = []
 
   // Hier schreiben wir ganze Worte in die Liste, auch das ist möglich
-  result.push("Sie heissen ")
+  result.push(" Ich heisse ")
 
   // Wir setzen die Liste dann so zusammen, dass der Name und das Alter an der
   // richtigen Stelle eingefügt werden.
   result.push(nameAndAge[0])
-  result.push(" und sind ")
+  result.push(" und bin ")
   result.push(nameAndAge[1])
   result.push(" Jahre alt.")
 
@@ -597,5 +597,28 @@ export function aufgabe30(args) {
 
 linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
 
-export function aufgabe31(args) {}
+export function aufgabe31(args) {
+  let summe = 0
+  let currentZahl = ""
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (
+      currentElement.charCodeAt(0) >= 48 &&
+      currentElement.charCodeAt(0) <= 57
+    ) {
+      currentZahl += currentElement
+    } else if (currentZahl !== "") {
+      summe += parseInt(currentZahl)
+      currentZahl = ""
+    }
+  }
+
+  if (currentZahl !== "") {
+    summe += parseInt(currentZahl)
+  }
+
+  return summe
+}
+
 linkupExerciseHandler("[data-click=aufgabe31]", aufgabe31)
