@@ -502,9 +502,10 @@ export function aufgabe26(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
-      result.push(input[1])
+      result.push(input[1]) //Fügt das zweite Element der Liste hinzu
     } else if (i === 1) {
-      result.push(input[0])
+      //Prüft, ob der Index gleich 1 ist
+      result.push(input[0]) //Fügt das erste Element des Arrays der Liste hinzu
     } else {
       result.push(currentElement)
     }
