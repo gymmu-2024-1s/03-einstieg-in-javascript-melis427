@@ -306,9 +306,10 @@ export function aufgabe16(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "$") {
-      break
+      //Prüft, ob currentElement ein "$" ist
+      break //Bricht ab, wenn es ein "$" ist
     }
-    result.push(currentElement)
+    result.push(currentElement) //Fügt das currentElement der Liste hinzu
   }
   return result.join("")
 }
