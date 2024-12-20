@@ -323,13 +323,16 @@ export function aufgabe17(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    //Wenn manauf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
+    //Wenn man auf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
     // in die totallist
 
     if (currentElement === " ") {
-      totallist.push(currentlist.join(""))
+      totallist.push(currentlist.join("")) // 'currentlist.length = 0' leert das 'currentlist', um mit dem nächsten Wort zu beginnen.
+      // Dies stellt sicher, dass 'currentlist' bei jedem neuen Wort von vorne beginnt.
       currentlist.length = 0
     } else {
+      //Wenn das Zeichen kein Leerzeichen ist, dann wird es in "currendlist" hinzugefügt
+      //das macht man, um die Zeichen des currentElemtents zu sammeln
       currentlist.push(currentElement)
     }
   }
@@ -382,21 +385,22 @@ export function aufgabe20(args) {
   const input = args
   const result = []
 
-  let allGood = true
+  let allGood = true //Setzt die allGood auf true, um anzunehmen, ob die Eingabe richtig ist
 
   //Prüfe ob nach jeden "."ein Leerschlag kommt
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === ".") {
+      //Wenn das currentElement ein "." ist, wird das nächste Zeichen geprüft
       //Prüfe ob das nächste Zeichen ein Leerzeichen ist
       if (input[i + 1] === " ") {
         //do nothing
       } else {
-        allGood = false
+        allGood = false //Wenn das nächste Zeichen kein Leerzeichen ist, dann wird allGood auf false gesetzt
       }
     }
   }
-  return allGood
+  return allGood //Gibt den Wert von allGood zurück
 }
 
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
