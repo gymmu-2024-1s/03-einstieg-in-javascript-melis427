@@ -555,6 +555,7 @@ export function aufgabe29(args) {
     if (currentElement === " ") {
       result.push("%")
     } else if (currentElement === "a") {
+      //Prüft, ob currentElement ein "a"ist. wenn ja, dann wird dieser Buchstabe zu einem "#" geändert
       result.push("#")
     } else if (currentElement === "e") {
       result.push("#")
