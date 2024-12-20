@@ -284,40 +284,50 @@ linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe17(args) {
   const input = args
-  const result = []
-  // Schreibe hinter jedem Wort ein ","
+  const totallist = []
+  const currentlist = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "") {
-      result.push(",")
+
+    //Wenn manauf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
+    // in die totallist
+
+    if (currentElement === " ") {
+      totallist.push(currentlist.join(""))
+      currentlist.length = 0
     } else {
-      result.push(currentElement)
+      currentlist.push(currentElement)
     }
   }
-
-  return result.join("")
+  //Alles in die Liste schreiben was man bis am ende gelesen hat.
+  totallist.push(currentlist.join(""))
+  return totallist
 }
-
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
-function aufgabe18(args) {
+export function aufgabe18(args) {
   const input = args
-  const result = []
-  //Schreibe folgende Ausgabe: Sie heissen `name` und sind `alter` Jahre alt,  wobei `name` und `alter` durch Eingaben eingesetzt werden.
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    if (currentElement === "name") {
-      result.push("Sie heissen")
-    } else if (currentElement === "alter") {
-      result.push("und sind")
-    } else {
-      result.push(currentElement)
-    }
-  }
-  return result.join(" ")
-}
 
-linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+  // Wir können die Aufgabe 17 verwenden um eine Liste zu bekommen.
+  const nameAndAge = aufgabe17(input)
+
+  // Wir generieren unsere Ausgabeliste
+  const result = []
+
+  // Hier schreiben wir ganze Worte in die Liste, auch das ist möglich
+  result.push("Sie heissen ")
+
+  // Wir setzen die Liste dann so zusammen, dass der Name und das Alter an der
+  // richtigen Stelle eingefügt werden.
+  result.push(nameAndAge[0])
+  result.push(" und sind ")
+  result.push(nameAndAge[1])
+  result.push(" Jahre alt.")
+
+  // Das Resultat immer als Text zurückgeben
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe18] ", aufgabe18)
 
 export function aufgabe19(args) {
   const input = args
