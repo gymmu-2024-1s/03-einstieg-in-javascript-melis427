@@ -671,19 +671,19 @@ export function Bucketsort(args) {
   const list = text.split("") // Wandelt den Text in eine Liste um
 
   // 256 Buckets für alle ASCII-Zeichen (von 0 bis 255)
-  let buckets = new Array(256).fill().map(() => [])
+  let buckets = new Array(256).fill().map(() => []) //Erstellt ein Array mit 256 leeren Arrays
 
-  // Elemente in die Buckets verteilen
+  // Elemente in die eintsprechenden Buckets verteilen
   for (let i = 0; i < list.length; i++) {
-    let index = list[i].charCodeAt(0) // Die ASCII-Werte der Zeichen
-    buckets[index].push(list[i])
+    let index = list[i].charCodeAt(0) // Holt den ASCII-Wert des Zeichens
+    buckets[index].push(list[i]) //Fügt das Zeichen dem Bucket an der Stelle des ASCII-Werts hinzu
   }
 
-  // Eimer sortieren und zusammenführen
+  // Buckets sortieren und zusammenführen
   return buckets
-    .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiere jedes Bucket
-    .flat() // Alle sortierten Buckets werden flach zusammengeführt
-    .join("") // Als String zusammenfügen
+    .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiert jedes Bucket basierend auf den ASCII-Wert der Zeichen
+    .flat() // Flacht das Array, sodass alle Buckets in einer einzigen Liste zusammengeführt werden
+    .join("") // Fügt alle Zeichen zu einem Strin zusammen
 }
 
 linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)
