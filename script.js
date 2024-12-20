@@ -122,7 +122,6 @@ linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 export function aufgabe05(args) {
   return /[A-Z]/.test(args) //Prüft, ob es mindestens einen Grossbuchstaben hat (in args). Es soll true oder false zurückgeben.
   //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
-  //Von KI gelöst
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
@@ -269,7 +268,7 @@ linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
 export function aufgabe14(args) {
   const input = args
-  let count = 0
+  let count = 0 //Setzt count auf 0
   for (let i = 0; i < input.length; i++) {
     if (input[i] === "e") {
       count++
@@ -290,7 +289,8 @@ export function aufgabe15(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === " ") {
-      break
+      //Prüft, ob das currentElement ein Leerzeichen ist
+      break //Bricht die Schleife ab, wenn es ein Leerzeichen hat
     }
     result.push(currentElement)
   }
