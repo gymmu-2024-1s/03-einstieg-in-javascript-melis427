@@ -630,7 +630,7 @@ export function aufgabe30(args) {
     const currentElement = input[i]
 
     if (currentElement === "s") {
-      return i //Gibt die Position des ersten "s" zurueck
+      return i //Gibt die Position des ersten "s" zurück
     }
   }
   return -1 //Falls kein "t" gefunden wurde, dann gibt es -1 zurück
@@ -639,20 +639,22 @@ export function aufgabe30(args) {
 linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
 
 export function aufgabe31(args) {
-  let summe = 0
-  let currentZahl = ""
+  let summe = 0 //Es wird auf 0 gesetzt, um später die Summe der zahlen zu speichern
+  let currentZahl = "" //currentZahl wird auf "" gesetzt, um die aktuelle Zahl zu speichern
   const input = args
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    //Prüft, ob das aktuelle Zeichen eine Ziffer ist (0 bis 9), basierend auf den ASCII-Wert
     if (
-      currentElement.charCodeAt(0) >= 48 &&
-      currentElement.charCodeAt(0) <= 57
+      currentElement.charCodeAt(0) >= 48 && //ASCII-Wert für 0
+      currentElement.charCodeAt(0) <= 57 //ASCII-Wert für 9
     ) {
-      currentZahl += currentElement
+      currentZahl += currentElement //Wenn das Zeichen eine Ziffer ist, wird es zur currentZahl hinzugefügen
     } else if (currentZahl !== "") {
-      summe += parseInt(currentZahl)
-      currentZahl = ""
+      //Wenn das aktuelle Zeichen keine Zahl ist und eine Zahl gefunden wurde
+      summe += parseInt(currentZahl) //Fügt die Zahl zur Summe hinzu. Die parseInt-Funktion wandelt die currentZahl in eine Zahl um
+      currentZahl = "" //Setzt currentZahl zurück, um nach der nächsten Zahl zu suchen
     }
   }
 
@@ -660,7 +662,7 @@ export function aufgabe31(args) {
     summe += parseInt(currentZahl)
   }
 
-  return summe
+  return summe //Gibt die berechnete Summe zurück
 }
 linkupExerciseHandler("[data-click=aufgabe31]", aufgabe31)
 
