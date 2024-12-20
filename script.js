@@ -572,9 +572,9 @@ export function Selectionsort(args) {
 
     // Move minimum element to its
     // correct position
-    let temp = input[i]
-    input[i] = input[min_idx]
-    input[min_idx] = temp
+    let temp = input[i] //Der Wert an der Stelle i wird in der Variablen temp gespeichert, damit wir ihn nicht verlieren.
+    input[i] = input[min_idx] //Der Wert von der Stelle min_idx wird an die Stelle i gesetzt.
+    input[min_idx] = temp //Der Wert von der Variablen temp wird an der Stelle min_idx gesetzt.
   }
 
   return input
@@ -596,3 +596,6 @@ export function aufgabe30(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
+
+export function aufgabe31(args) {}
+linkupExerciseHandler("[data-click=aufgabe31]", aufgabe31)
