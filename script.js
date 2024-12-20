@@ -243,7 +243,7 @@ export function aufgabe12(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
-      return i
+      return i //Gibt die Position des ersten "e" zurueck
     }
   }
   return -1 // or null
@@ -253,15 +253,16 @@ linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
   const input = args
-  let lastIndex = -1
+  let lastIndex = -1 //lasIndex wird auf -1 gesetzt, um zu kennzeichnen, dass kein "e" gefunden wurde
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      lastIndex = i
+      //Prüft, ob das Zeichen e ist
+      lastIndex = i //Speichert die Position vom "e"
     }
   }
-  return lastIndex
+  return lastIndex //Gibt die Position des letzten "e" zurück.
 }
 
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
