@@ -219,21 +219,21 @@ export function aufgabe11(args) {
   const input = args
 
   //Erstelle eine Variable um den ASCII-Code zu speichern.
-  let asciiCode = 0
+  let asciiCode = 0 //Setzt asciiCode auf 0
 
   //Speichere den ASCII-Code vom ersten Zeichen
   asciiCode = input.charCodeAt(0) // Speichert den ASCII/Unicode-Wert des ersten Zeichens von 'input' in 'asciiCode'
   //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind.
   if (input.length > 1) {
-    return null
+    //Prüft, ob die Eingabe mehr als ein Zeichen hat
+    return null //Gibt null zurück, wenn die Eingabe mehr als ein Zeichen hat
 
     //Gibt den ASCII-Wert des ersten Zeichens zurück oder 'null', wenn die Eingabe leer ist.
   } else if (input.length === 0) {
-    return null // Gibt null zurück, wenn 'input' mehr als ein Zeichen enthält, andernfalls den ASCII-Wert des ersten Zeichens.
+    return null // Gibt null zurück, wenn die Eingabe leer ist
   }
   return asciiCode
 }
-
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
 export function aufgabe12(args) {
   const input = args
