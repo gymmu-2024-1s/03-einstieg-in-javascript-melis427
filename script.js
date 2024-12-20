@@ -622,3 +622,5 @@ export function aufgabe31(args) {
   return summe
 }
 linkupExerciseHandler("[data-click=aufgabe31]", aufgabe31)
+
+export function Bucketsort(args) {}
