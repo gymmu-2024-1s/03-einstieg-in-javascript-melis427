@@ -465,8 +465,10 @@ export function aufgabe24(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
+      //Prüft, ob der Wert von i gleich 0 ist
       result.push(input[input.length - 1])
     } else if (i === input.length - 1) {
+      //Prüft, ob der Wert von i gleich input.length - 1 ist
       result.push(input[0])
     } else {
       result.push(currentElement)
