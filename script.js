@@ -538,7 +538,7 @@ export function Bubblesort(args) {
     const nextElement = list[i + 1]
     if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
       // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
-      const tmp = list[i + 1]
+      const tmp = list[i + 1] // Speichert den Wert aus der Liste an der Position i+1 in der Variablen tmp
       list[i + 1] = list[i]
       list[i] = tmp
       i = -1 // starte von vorne wenn etwas vertauscht wurde.
@@ -600,6 +600,7 @@ linkupExerciseHandler("[data-click=aufgabe30]", aufgabe30)
 export function aufgabe31(args) {
   let summe = 0
   let currentZahl = ""
+  const input = args
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -620,5 +621,4 @@ export function aufgabe31(args) {
 
   return summe
 }
-
 linkupExerciseHandler("[data-click=aufgabe31]", aufgabe31)
