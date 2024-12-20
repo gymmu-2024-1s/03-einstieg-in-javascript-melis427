@@ -623,4 +623,24 @@ export function aufgabe31(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe31]", aufgabe31)
 
-export function Bucketsort(args) {}
+export function Bucketsort(args) {
+  const text = args
+  const list = text.split("") // Wandelt den Text in eine Liste um
+
+  // 256 Buckets für alle ASCII-Zeichen (von 0 bis 255)
+  let buckets = new Array(256).fill().map(() => [])
+
+  // Elemente in die Buckets verteilen
+  for (let i = 0; i < list.length; i++) {
+    let index = list[i].charCodeAt(0) // Die ASCII-Werte der Zeichen
+    buckets[index].push(list[i])
+  }
+
+  // Eimer sortieren und zusammenführen
+  return buckets
+    .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiere jedes Bucket
+    .flat() // Alle sortierten Buckets werden flach zusammengeführt
+    .join("") // Als String zusammenfügen
+}
+
+linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)
