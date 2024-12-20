@@ -599,23 +599,20 @@ export function Selectionsort(args) {
   const input = args.split("")
   const result = []
 
-  let n = input.length
+  let n = input.length //Weist der Variablen n die Länge von input zu, also die Anzahl der Elemente oder Zeichen in input
   for (let i = 0; i < n - 1; i++) {
-    // Assume the current position holds
-    // the minimum element
-    let min_idx = i
+    // Man geht davon aus, dass die aktuelle Position das kleinste Element enthält
+    let min_idx = i //Setzt min_dix auf den aktuellen Wert von i, da man davon ausgeht, dass das Element an dieser Stelle der kleinste Wert ist
 
-    // Iterate through the unsorted portion
-    // to find the actual minimum
+    //Durchlaufe den unsortierten TEil, um das tatsächliche Minimum zu finden
     for (let j = i + 1; j < n; j++) {
       if (input[j] < input[min_idx]) {
-        // Update min_idx if a smaller element is found
-        min_idx = j
+        //Aktualisiere min_dix, wenn ein kleineres Element gefunden wird
+        min_idx = j //Setzt min_dix auf den aktuellen Wert von j, wenn ein kleineres Element als das aktuelle Minimum gefunden wird
       }
     }
 
-    // Move minimum element to its
-    // correct position
+    //Bewege das kleinse Element an seine richtige Position
     let temp = input[i] //Der Wert an der Stelle i wird in der Variablen temp gespeichert, damit wir ihn nicht verlieren.
     input[i] = input[min_idx] //Der Wert von der Stelle min_idx wird an die Stelle i gesetzt.
     input[min_idx] = temp //Der Wert von der Variablen temp wird an der Stelle min_idx gesetzt.
